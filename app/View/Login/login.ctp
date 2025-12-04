@@ -34,7 +34,7 @@
                 </div>
                 <div class="botoes">
                     <input class="botao-entrar" type="submit" value="Entrar">
-                    <span class="nao-login" >Não tem conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/cadastro'); ?>">Cadastre-se</a></span>
+                    <span class="nao-login" >Não tem conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/cadastrar'); ?>">Cadastre-se</a></span>
                 </div>
             </div>
         </div>
