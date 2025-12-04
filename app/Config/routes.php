@@ -8,4 +8,8 @@ Router::connect('/cadastro', array(
 	'controller' => 'usuario',
 	'action' => 'cadastrarUsuario'
 ));
+Router::connect('/home', array(
+	'controller' => 'admin',
+	'action' => 'paginaInicial'
+));
 require CAKE . 'Config' . DS . 'routes.php';
