@@ -18,42 +18,72 @@
                 <h1 class="titulo">Criar Conta</h1>
                 <span class="sub-titulo">Preencha os dados para se cadastrar</span>
             </div>
+            <?=  $this->Form->create('Prestador', ['url' => ['controller' => 'usuario', 'action' => 'cadastroUsuario']])?>
             <div class="form">
                 <div class="inpts">
                     <label class="label">
                         Nome completo
                     </label>
-                    <input class="input" type="text" name="nome" id="" placeholder="Digite seu nome">
+                    <?= $this->Form->input('nome', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => 'Digite seu nome'
+                    ]); ?>
                 </div>
                 <div class="inpts">
                     <label class="label">
                         E-mail
                     </label>
-                    <input class="input" type="email" name="email" id="" placeholder="seu@email.com">
+                    <?= $this->Form->input('email', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => 'seu@email.com',
+                        'type' => 'email'
+                    ]); ?>
                 </div>
                 <div class="inpts">
                     <label class="label">
                         Telefone
                     </label>
-                    <input class="input" type="text" name="telefone" id="" placeholder="(99) 99999-9999">
+                    <?= $this->Form->input('telefone', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => '(99) 99999-9999'
+                    ]); ?>
                 </div>
                 <div class="inpts">
                     <label class="label">
                         Senha
                     </label>
-                    <input class="input" type="password" name="senha" id="" placeholder="********">
+                    <?= $this->Form->input('password', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'type' => 'password',
+                        'placeholder' => '********'
+                    ]); ?>
                 </div>
                 <div class="inpts">
                     <label class="label">
                         Confirmar senha
                     </label>
-                    <input class="input" type="password" name="senha" id="" placeholder="********">
+                    <?= $this->Form->input('confirm_password', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'type' => 'password',
+                        'placeholder' => '********'
+                    ]); ?>
                 </div>
                 <div class="botoes">
-                    <input class="botao-entrar" type="submit" value="Entrar">
+                    <input class="botao-entrar" type="submit" value="Salvar">
                     <span class="nao-login" >Já tem uma conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/'); ?>">Faça login</a></span>
                 </div>
             </div>
+            <?= $this->Form->end(); ?>
         </div>
     </main>
 </body>

@@ -4,9 +4,13 @@ Router::connect('/', array(
 	'controller' => 'login',
 	'action' => 'login'
 ));
-Router::connect('/cadastro', array(
+Router::connect('/cadastrar', array(
 	'controller' => 'usuario',
 	'action' => 'cadastrarUsuario'
+));
+Router::connect('/cadastro', array(
+	'controller' => 'usuario',
+	'action' => 'cadastroUsuario'
 ));
 Router::connect('/home', array(
 	'controller' => 'admin',
