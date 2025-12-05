@@ -2,15 +2,22 @@
 
 Class UsuarioController extends AppController {
 
-    public $uses = ['Prestador'];
+    public $uses = ['Prestador', 'Servico'];
 
     public function cadastrarUsuario() {
         $this->layout = false;
+
+        $servicos = $this->Servico->find('list', [
+            'fields' => ['Servico.id', 'Servico.descricao'],
+            'order' => ['Servico.descricao' => 'ASC']
+        ]);
+
+        $this->set('servicos', $servicos);
     }
 
     public function cadastroUsuario() {
         $this->layout = false;
-        
+
         if ($this->request->is('post')) {
 
             if ($this->request->data['Prestador']['password'] !== $this->request->data['Prestador']['confirm_password']) {
@@ -22,8 +29,28 @@ Class UsuarioController extends AppController {
 
             if ($this->Prestador->save($this->request->data)) {
 
+                $prestadorId = $this->Prestador->id;
+
+                $this->loadModel('PrestadorServico');
+
+                if (!empty($this->request->data['PrestadorServico']['servico'])) {
+
+                    foreach ($this->request->data['PrestadorServico']['servico'] as $servico) {
+                        if (!empty($servico['id'])) {
+
+                            $this->PrestadorServico->create();
+                            $this->PrestadorServico->save([
+                                'prestador_id' => $prestadorId,
+                                'servico_id' => $servico['id'],
+                                'valor'       => !empty($servico['valor']) ? $servico['valor'] : 0,
+                                'status_id'   => 1
+                            ]);
+                        }
+                    }
+                }
+
                 $this->Flash->success('Conta criada com sucesso!');
-                return $this->redirect('/');
+                return $this->redirect('/home');
             }
 
             $this->Flash->error('Erro ao cadastrar. Verifique os dados');
