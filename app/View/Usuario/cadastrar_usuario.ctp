@@ -60,7 +60,8 @@
                         'label' => false,
                         'div' => false,
                         'class' => 'input',
-                        'placeholder' => '(99) 99999-9999'
+                        'placeholder' => '(99) 99999-9999',
+                        'oninput' => 'formatarTelefone(this)'
                     ]); ?>
                 </div>
                 <div class="inpts">
@@ -72,8 +73,10 @@
                         'div' => false,
                         'class' => 'input',
                         'type' => 'password',
-                        'placeholder' => '********'
+                        'placeholder' => '********',
+                        'id' => 'password'
                     ]); ?>
+                    <small id="senha-min-error" style="color: red; display: none;">A senha deve ter pelo menos 8 caracteres.</small>
                 </div>
                 <div class="inpts">
                     <label class="label">
@@ -84,8 +87,10 @@
                         'div' => false,
                         'class' => 'input',
                         'type' => 'password',
-                        'placeholder' => '********'
+                        'placeholder' => '********',
+                        'id' => 'password_confirmation'
                     ]); ?>
+                    <small id="senha-match-error" style="color: red; display: none;">As senhas não coincidem.</small>
                 </div>
                 <div class="inpts">
                     <label class="label">
@@ -107,12 +112,16 @@
                     </div>
                 </div>
                 <div class="botoes">
-                    <input class="botao-entrar" type="submit" value="Salvar">
+                    <input id="submit-btn" class="botao-entrar" type="submit" value="Salvar">
                     <span class="nao-login" >Já tem uma conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/'); ?>">Faça login</a></span>
                 </div>
             </div>
             <?= $this->Form->end(); ?>
         </div>
     </main>
+    <?php 
+        echo $this->Html->script('formatarTelefone');
+        echo $this->Html->script('verificadorSenha');
+    ?>
 </body>
 </html>
