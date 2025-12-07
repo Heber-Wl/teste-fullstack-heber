@@ -44,147 +44,40 @@
                         <th>Prestador</th>
                         <th>Telefone</th>
                         <th>Serviços</th>
-                        <th>Valor</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td-1">
-                            <span>Olivia Rhye</span>
-                            <span>olivia@gmail.com</span>
-                        </td>
-                        <td>(82) 99885-6521</td>
-                        <td>planejamnento e Arquiterura</td>
-                        <td>R$ 85,36</td>
-                        <td>
-                            <a class="link" href="">
-                                <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
-                            </a>
-                            <a class="link" href="">
-                                <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
-                            </a>
-                        </td>
-                    </tr>
+                    <?php foreach ($prestadores as $prestador): ?>
+                        <tr>
+                            <td class="td">
+                                <strong><?= h($prestador['Prestador']['nome']); ?></strong><br>
+                                <small><?= h($prestador['Prestador']['email']); ?></small>
+                            </td>
+                            <td>
+                                <?= h($prestador['Prestador']['telefone']); ?>
+                            </td>
+                            <td>
+                                <?php foreach ($prestador['PrestadorServico'] as $ps): ?>
+
+                                    <?= h($ps['Servico']['descricao']); ?>  
+                                    –  
+                                    <strong>R$ <?= number_format($ps['valor'], 2, ',', '.'); ?></strong>
+
+                                    <br>
+
+                                <?php endforeach; ?>
+                            </td>
+                            <td>
+                                <a class="link" href="">
+                                    <svg class="icon editar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#535862" d="m7 17.013l4.413-.015l9.632-9.54c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.756-.756-2.075-.752-2.825-.003L7 12.583zM18.045 4.458l1.589 1.583l-1.597 1.582l-1.586-1.585zM9 13.417l6.03-5.973l1.586 1.586l-6.029 5.971L9 15.006z"/><path fill="#535862" d="M5 21h14c1.103 0 2-.897 2-2v-8.668l-2 2V19H8.158c-.026 0-.053.01-.079.01c-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2"/></svg>
+                                </a>
+                                <a class="link" href="">
+                                    <svg class="icon escluir" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none" stroke="#535862" stroke-linejoin="round" stroke-width="4"><path d="M9 10v34h30V10z"/><path stroke-linecap="round" d="M20 20v13m8-13v13M4 10h40"/><path d="m16 10l3.289-6h9.488L32 10z"/></g></svg>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
