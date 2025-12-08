@@ -37,4 +37,16 @@ class Prestador extends AppModel {
             'message' => 'Valor inválido'
         ],
     ];
+
+    public function resgatarPrimeirosDuasLetras($nome) {
+        $nomeArray = explode(' ', trim($nome));
+        $primeirosDois = array_slice($nomeArray, 0, 2);
+
+        $iniciais = '';
+        foreach ($primeirosDois as $parte) {
+            $iniciais .= strtoupper(mb_substr($parte, 0, 1, 'UTF-8'));
+        }
+
+        return $iniciais;
+    }
 }
