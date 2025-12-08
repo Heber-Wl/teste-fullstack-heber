@@ -12,7 +12,11 @@ Class AdminController extends AppController {
             'recursive' => 2,
             'order' => ['Prestador.nome' => 'ASC']
         ]);
-
+        foreach ($prestadores as &$p) {
+            $p['Prestador']['iniciais'] =
+                $this->Prestador->resgatarPrimeirosDuasLetras($p['Prestador']['nome']);
+        }
+        
         $servicos = $this->Servico->find('all', [
             'order' => ['Servico.descricao' => 'ASC']
         ]);

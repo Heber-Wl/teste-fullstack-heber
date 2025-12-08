@@ -50,9 +50,23 @@
                 <tbody>
                     <?php foreach ($prestadores as $prestador): ?>
                         <tr>
-                            <td class="td">
-                                <strong><?= h($prestador['Prestador']['nome']); ?></strong><br>
-                                <small><?= h($prestador['Prestador']['email']); ?></small>
+                            <td>
+                                <div class="td">
+                                    <?php if (!empty($prestador['Prestador']['foto'])): ?>
+                                        <img class="foto-prestador"
+                                            src="<?= $this->Html->url('/img/' . $prestador['Prestador']['foto']) ?>" alt="">
+                                    <?php else: ?>
+                                        <div class="iniciais">
+                                            <span class="letras">
+                                                <?= h($prestador['Prestador']['iniciais']); ?>
+                                            </span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="info-prestador">
+                                        <strong><?= h($prestador['Prestador']['nome']); ?></strong><br>
+                                        <small><?= h($prestador['Prestador']['email']); ?></small>
+                                    </div>
+                                </div>
                             </td>
                             <td>
                                 <?= h($prestador['Prestador']['telefone']); ?>
