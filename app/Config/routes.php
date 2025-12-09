@@ -16,4 +16,8 @@ Router::connect('/home', array(
 	'controller' => 'admin',
 	'action' => 'paginaInicial'
 ));
+Router::connect('/importar', [
+    'controller' => 'admin',
+    'action' => 'importar'
+]);
 require CAKE . 'Config' . DS . 'routes.php';

@@ -27,11 +27,62 @@
                     <h1 class="h1">Prestadores de Serviço</h1>
                     <span class="subtitulo">Veja sua lista de prestadores de serviço</span>
                 </div>
-                <div class="btn-opcoes">
-                    <button class="importar">
+                <div class="btn-opcoes" onclick="document.getElementById('importarArquivo').click()">
+                    <button class="importar" data-bs-toggle="modal" data-bs-target="#modalImportar">
                         <svg class="icon importar-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 14a1 1 0 0 0-1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 0-2 0v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-4a1 1 0 0 0-1-1m-9.71 1.71a1 1 0 0 0 .33.21a.94.94 0 0 0 .76 0a1 1 0 0 0 .33-.21l4-4a1 1 0 0 0-1.42-1.42L13 12.59V3a1 1 0 0 0-2 0v9.59l-2.29-2.3a1 1 0 1 0-1.42 1.42Z"/></svg>
                         Importar
                     </button>
+                    <div class="modal fade" id="modalImportar" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title">Importar Prestadores</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="modelo">
+                                    <span>Antes de importar, baixe o modelo da tabela:</span>
+                                    <a href="/files/template_prestadores.csv" 
+                                    class="link-baixar"
+                                    >
+                                        <svg class="icone-download" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>
+                                        Baixar modelo
+                                    </a>
+                                </div>
+
+                                <hr>
+                                <?php
+                                echo $this->Form->create('Import', [
+                                    'url' => ['controller' => 'admin', 'action' => 'importar'],
+                                    'type' => 'file'
+                                ]);
+                                ?>
+
+                                <div class="mb-3">
+                                    <?=
+                                        $this->Form->input('arquivo', [
+                                            'type' => 'file',
+                                            'label' => 'Selecione o arquivo (CSV)',
+                                            'required' => true
+                                        ]);
+                                    ?>
+                                </div>
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button class="btn btn-primary" type="submit">Importar</button>
+                            </div>
+
+                            <?= $this->Form->end(); ?>
+
+                            </div>
+                        </div>
+                    </div>
+
                     <button class="adicionar">
                         <svg class="icon add" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
                         Add novo prestador
@@ -98,6 +149,7 @@
     </main>
     <?php
         echo $this->Html->script('https://code.jquery.com/jquery-3.7.1.min.js');
+        echo $this->Html->script('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
         echo $this->Html->script('https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js');
         echo $this->Html->script('https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js');
         echo $this->Html->script('https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js');
