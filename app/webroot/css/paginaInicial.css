@@ -53,12 +53,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
-    width: 131.38px;
-    background-color: #F0F0F0;
+    width: 35%;
+    background-color: #fff;
     text-decoration: none;
-    color: #000;
-    border: 1px solid #000;
+    color: #374151;
+    border: 1px solid #374151;
+    padding: 10px 12px;
+    border-radius: 8px;
 }
 .icone-download {
     height: 20px;
@@ -84,6 +85,11 @@
     width: 50px;
     background-color: #FFF1F2;
     color: #FF2B34;
+}
+.btn.btn-primary.botao {
+    background-color: #FF2B34;
+    color: #fff;
+    border: none;
 }
 .letras {
     font-weight: 600;
