@@ -7,6 +7,9 @@
     <?php 
         echo $this->Html->css('alert');
         echo $this->Html->css('reset');
+
+        // Fonte
+        echo $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
     ?>
 </head>
 <body>
