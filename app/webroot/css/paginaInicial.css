@@ -107,6 +107,7 @@
     border: none;
     padding: 10px 16px;
     border-radius: 8px;
+    text-decoration: none;
 }
 .table.table-striped.table-bordered {
     border-radius: 12px;

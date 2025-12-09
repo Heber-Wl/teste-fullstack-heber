@@ -15,9 +15,9 @@
     <main class="main">
         <div class="card-login">
             <div class="home">
-                <h1 class="titulo">Cadastro de Prestador de Serviço</h1>
+                <h1 class="titulo">Edição de Prestador de Serviço</h1>
                 <span class="sub-titulo">Informações pessoais</span>
-                <span class="sub-sub-titulo">Cadastre suas informações e adicione uma foto. </span>
+                <span class="sub-sub-titulo">Edite suas informações e seus serviços. </span>
             </div>
             <?= $this->Form->create('Prestador', [
                 'url' => ['controller' => 'admin', 'action' => 'atualizarPrestador'],
