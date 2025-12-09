@@ -149,6 +149,13 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <div class="paginacao">
+                <ul class="pagination">
+                    <?= $this->Paginator->prev('« Anterior', ['tag' => 'li'], null, ['tag' => 'li', 'class' => 'disabled']) ?>
+                    <?= $this->Paginator->numbers(['tag' => 'li', 'currentClass' => 'active']) ?>
+                    <?= $this->Paginator->next('Próximo »', ['tag' => 'li'], null, ['tag' => 'li', 'class' => 'disabled']) ?>
+                </ul>
+            </div>
         </div>
     </main>
     <?php
