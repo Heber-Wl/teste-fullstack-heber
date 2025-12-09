@@ -7,7 +7,7 @@
 
     <?php 
         echo $this->Html->css('reset');
-        echo $this->Html->css('login');
+        echo $this->Html->css('cadastroPrestador');
         echo $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css')
     ?>
 </head>
@@ -15,8 +15,9 @@
     <main class="main">
         <div class="card-login">
             <div class="home">
-                <h1 class="titulo">Cadastrar Prestador</h1>
-                <span class="sub-titulo">Preencha os dados para se cadastrar</span>
+                <h1 class="titulo">Cadastro de Prestador de Serviço</h1>
+                <span class="sub-titulo">Informações pessoais</span>
+                <span class="sub-sub-titulo">Cadastre suas informações e adicione uma foto. </span>
             </div>
             <?= $this->Form->create('Prestador', [
                 'url' => ['controller' => 'usuario', 'action' => 'cadastroUsuario'],
@@ -36,6 +37,18 @@
                 </div>
                 <div class="inpts">
                     <label class="label">
+                        E-mail
+                    </label>
+                    <?= $this->Form->input('email', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => 'seu@email.com',
+                        'type' => 'email'
+                    ]); ?>
+                </div>
+                <div class="inpts">
+                    <label class="label">
                         Foto de perfil
                     </label>
                     <div class="foto">
@@ -48,18 +61,6 @@
                             'id' => 'foto'
                         ]); ?>
                     </div>
-                </div>
-                <div class="inpts">
-                    <label class="label">
-                        E-mail
-                    </label>
-                    <?= $this->Form->input('email', [
-                        'label' => false,
-                        'div' => false,
-                        'class' => 'input',
-                        'placeholder' => 'seu@email.com',
-                        'type' => 'email'
-                    ]); ?>
                 </div>
                 <div class="inpts">
                     <label class="label">
@@ -101,29 +102,31 @@
                     ]); ?>
                     <small id="senha-match-error" style="color: red; display: none;">As senhas não coincidem.</small>
                 </div>
-                <div class="inpts">
-                    <label class="label">
-                        Serviços
-                    </label>
-                    <div class="lista-servicos">
-                        <?php foreach ($servicos as $id => $descricao): ?>
-                            <div class="lista-de-servicos">
+            </div>
+            <div class="inpts servicos">
+                <label class="label">
+                    Serviços
+                </label>
+                <div class="lista-servicos">
+                    <?php foreach ($servicos as $id => $descricao): ?>
+                        <div class="lista-de-servicos">
+                            <div class="junto">
                                 <input type="checkbox"
                                         name="data[PrestadorServico][servico][<?= $id ?>][id]"
                                         value="<?= $id ?>">
                                     <?= $descricao ?>
-                                <input type="number" step="0.01" min="0"
-                                    placeholder="Valor"
-                                    name="data[PrestadorServico][servico][<?= $id ?>][valor]"
-                                    class="input-servico-valor">
                             </div>
-                        <?php endforeach; ?>
-                    </div>
+                            <input type="number" step="0.01" min="0"
+                                placeholder="Valor"
+                                name="data[PrestadorServico][servico][<?= $id ?>][valor]"
+                                class="input-servico-valor">
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="botoes">
-                    <input id="submit-btn" class="botao-entrar" type="submit" value="Salvar">
-                    <span class="nao-login" >Já tem uma conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/'); ?>">Faça login</a></span>
-                </div>
+            </div>
+            <div class="botoes">
+                <input id="submit-btn" class="botao-entrar" type="submit" value="Salvar">
+                <span class="nao-login" >Já tem uma conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/'); ?>">Faça login</a></span>
             </div>
             <?= $this->Form->end(); ?>
         </div>
