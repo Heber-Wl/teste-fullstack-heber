@@ -4,7 +4,8 @@
     justify-content: center;
     width: 100%;
     background-color: #FAFAFA;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 40px;
 }
 .conteudo {
     display: grid;
