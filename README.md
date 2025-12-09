@@ -1,48 +1,62 @@
-# CakePHP
+# 🧰 Sistema de Gestão de Prestadores — CakePHP 2.x
 
-[![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](https://travis-ci.org/cakephp/cakephp)
-[![Code consistency](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/grade.svg)](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/)
+Este projeto é um sistema completo para gerenciamento de prestadores de serviço, permitindo cadastro, edição, exclusão, importação via CSV e visualização organizada com paginação. Possui área administrativa com login seguro, listagem de prestadores, upload de foto, associação de serviços e valores, além de ferramentas auxiliares como modal de importação e exibição profissional.
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+---
 
+# 🚀 Instalação do Ambiente
 
-## Some Handy Links
+Antes de iniciar, certifique-se de ter instalado:
 
-[CakePHP](https://cakephp.org) - The rapid development PHP framework
+- PHP 7.2 — 7.4  
+  (CakePHP 2.x não funciona em PHP 8)
+- MySQL 5.7+
+- Apache ou Nginx
+- Composer (opcional)
 
-[CookBook](https://book.cakephp.org) - THE CakePHP user documentation; start learning here!
+---
 
-[API](https://api.cakephp.org) - A reference to CakePHP's classes
+# 📂 Clonar o Projeto
 
-[Plugins](https://plugins.cakephp.org) - A repository of extensions to the framework
+git clone: https://github.com/Heber-Wl/teste-fullstack-heber.git
 
-[The Bakery](https://bakery.cakephp.org) - Tips, tutorials and articles
+CREATE DATABASE nome_do_banco CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-[Community Center](https://community.cakephp.org) - A source for everything community related
+cp app/Config/database.php.default app/Config/database.php
 
-[Training](https://training.cakephp.org) - Join a live session and get skilled with the framework
+public $default = array(
+    'datasource' => 'Database/Mysql',
+    'persistent' => false,
+    'host' => 'localhost',
+    'login' => 'root',
+    'password' => '',
+    'database' => 'nome_do_banco',
+    'prefix' => '',
+    'encoding' => 'utf8'
+);
 
-[CakeFest](https://cakefest.org) - Don't miss our annual CakePHP conference
+app/Config/ServicoSeedShell/.php
 
-[Cake Software Foundation](https://cakefoundation.org) - Promoting development related to CakePHP
+php app/Console/cake seed ServicoSeedShell
 
+---
 
-## Get Support!
+# ▶️ Iniciar o Projeto
+http://localhost/seu-projeto/
+php -S localhost:8000 -t app/webroot
 
-[#cakephp](https://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
+---
 
-[Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
+# 🎥 Vídeo Explicando o Desenvolvimento
+https://youtu.be/Q0JykJsIi9Y
 
-[GitHub Issues](https://github.com/cakephp/cakephp/issues) - Got issues? Please tell us!
+---
 
-[Roadmaps](https://github.com/cakephp/cakephp/wiki#roadmaps) - Want to contribute? Get involved!
-
-
-## Contributing
-
-[CONTRIBUTING.md](CONTRIBUTING.md) - Quick pointers for contributing to the CakePHP project
-
-[CookBook "Contributing" Section (2.x)](https://book.cakephp.org/2.0/en/contributing.html) [(3.x)](https://book.cakephp.org/3.0/en/contributing.html) - Version-specific details about contributing to the project
+🛠️ Tecnologias Utilizadas
+CakePHP 2.x
+PHP 7.4
+MySQL
+Bootstrap 5
+DataTables
+jQuery
+HTML5 / CSS3
