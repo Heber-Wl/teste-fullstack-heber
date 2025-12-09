@@ -18,25 +18,37 @@
                 <h1 class="titulo">Bem-vindo</h1>
                 <span class="sub-titulo">Faça login para acessar sua conta</span>
             </div>
+            <?= $this->Form->create('Admin', [
+                'url' => ['controller' => 'login', 'action' => 'loginAdmin']
+            ]) ?>
             <div class="form">
-                
                 <div class="inpts">
-                    <label class="label">
-                        E-mail
-                    </label>
-                    <input class="input" type="email" name="email" id="" placeholder="seu@email.com">
+                    <label class="label">E-mail</label>
+                    <?= $this->Form->input('email', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'type'  => 'email',
+                        'placeholder' => 'seu@email.com'
+                    ]); ?>
                 </div>
+
                 <div class="inpts">
-                    <label class="label">
-                        Senha
-                    </label>
-                    <input class="input" type="password" name="senha" id="" placeholder="********">
+                    <label class="label">Senha</label>
+                    <?= $this->Form->input('senha', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'type'  => 'password',
+                        'placeholder' => '********'
+                    ]); ?>
                 </div>
                 <div class="botoes">
                     <input class="botao-entrar" type="submit" value="Entrar">
-                    <span class="nao-login" >Não tem conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/cadastrar'); ?>">Cadastre-se</a></span>
+                    <span class="nao-login" >Não tem conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/cadastrar-admin'); ?>">Cadastre-se</a></span>
                 </div>
             </div>
+            <?= $this->Form->end(); ?>
         </div>
     </main>
 </body>

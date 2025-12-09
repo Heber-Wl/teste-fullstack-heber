@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <?php 
+        echo $this->Html->css('reset');
+        echo $this->Html->css('login');
+        echo $this->Html->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css')
+    ?>
+</head>
+<body>
+    <main class="main">
+        <div class="card-login">
+            <div class="home">
+                <h1 class="titulo">Cadastrar Administrador</h1>
+                <span class="sub-titulo">Preencha os dados para se cadastrar</span>
+            </div>
+            <?= $this->Form->create('Admin', [
+                'url' => ['controller' => 'usuario', 'action' => 'cadastroAdmin'],
+                'type' => 'file'
+            ]) ?>
+            <div class="form">
+                <div class="inpts">
+                    <label class="label">
+                        Nome completo
+                    </label>
+                    <?= $this->Form->input('nome', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => 'Digite seu nome'
+                    ]); ?>
+                </div>
+                <div class="inpts">
+                    <label class="label">
+                        E-mail
+                    </label>
+                    <?= $this->Form->input('email', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => 'seu@email.com',
+                        'type' => 'email'
+                    ]); ?>
+                </div>
+                <div class="inpts">
+                    <label class="label">
+                        Telefone
+                    </label>
+                    <?= $this->Form->input('telefone', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'placeholder' => '(99) 99999-9999',
+                        'oninput' => 'formatarTelefone(this)'
+                    ]); ?>
+                </div>
+                <div class="inpts">
+                    <label class="label">
+                        Senha
+                    </label>
+                    <?= $this->Form->input('password', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'type' => 'password',
+                        'placeholder' => '********',
+                        'id' => 'password'
+                    ]); ?>
+                    <small id="senha-min-error" style="color: red; display: none;">A senha deve ter pelo menos 8 caracteres.</small>
+                </div>
+                <div class="inpts">
+                    <label class="label">
+                        Confirmar senha
+                    </label>
+                    <?= $this->Form->input('confirm_password', [
+                        'label' => false,
+                        'div' => false,
+                        'class' => 'input',
+                        'type' => 'password',
+                        'placeholder' => '********',
+                        'id' => 'password_confirmation'
+                    ]); ?>
+                    <small id="senha-match-error" style="color: red; display: none;">As senhas não coincidem.</small>
+                </div>
+                <div class="botoes">
+                    <input id="submit-btn" class="botao-entrar" type="submit" value="Salvar">
+                    <span class="nao-login" >Já tem uma conta? <a class="link-nao-login" href="<?php echo $this->Html->url('/'); ?>">Faça login</a></span>
+                </div>
+            </div>
+            <?= $this->Form->end(); ?>
+        </div>
+    </main>
+    <?php 
+        echo $this->Html->script('formatarTelefone');
+        echo $this->Html->script('verificadorSenha');
+    ?>
+</body>
+</html>

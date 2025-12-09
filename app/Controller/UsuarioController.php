@@ -1,10 +1,17 @@
 <?php
+App::uses('AppController', 'Controller');
+App::uses('Security', 'Utility');
 
 Class UsuarioController extends AppController {
 
     public $uses = ['Prestador', 'Servico'];
 
     public function cadastrarUsuario() {
+        if (!$this->Session->check('Admin')) {
+
+            $this->Session->setFlash('Você precisa fazer login!.', 'error');
+            return $this->redirect('/');
+        }
         $this->layout = 'mensagens';
 
         $servicos = $this->Servico->find('list', [
@@ -103,6 +110,59 @@ Class UsuarioController extends AppController {
 
             $this->Session->setFlash('Erro ao cadastrar. Verifique os dados', 'error');
             return $this->redirect($this->referer());
+        }
+    }
+
+    public function cadastrarAdmin() {
+
+        $this->layout = 'mensagens';
+    }
+    public function cadastroAdmin()
+    {
+        $this->autoRender = false;
+        $this->loadModel('Admin');
+
+        if (!$this->request->is('post')) {
+            return $this->redirect('/');
+        }
+
+        if (!isset($this->request->data['Admin'])) {
+            $this->Session->setFlash('Erro: dados inválidos enviados.', 'error');
+            return $this->redirect('/cadastrar-admin');
+        }
+
+        $data = $this->request->data['Admin'];
+
+        if ($data['password'] !== $data['confirm_password']) {
+            $this->Session->setFlash('As senhas não coincidem.', 'error');
+            return $this->redirect('/cadastrar-admin');
+        }
+
+        if (strlen($data['password']) < 8) {
+            $this->Session->setFlash('A senha deve ter ao menos 8 caracteres.', 'error');
+            return $this->redirect('/cadastrar-admin');
+        }
+
+        $senhaHash = Security::hash($data['password'], 'sha256', true);
+
+        $admin = [
+            'Admin' => [
+                'nome'    => $data['nome'],
+                'email'   => $data['email'],
+                'senha'   => $senhaHash,
+                'created' => date('Y-m-d H:i:s'),
+                'modified'=> date('Y-m-d H:i:s')
+            ]
+        ];
+
+        $this->Admin->create();
+
+        if ($this->Admin->save($admin)) {
+            $this->Session->setFlash('Administrador cadastrado com sucesso!', 'success');
+            return $this->redirect('/');
+        } else {
+            $this->Session->setFlash('Erro ao cadastrar administrador.', 'error');
+            return $this->redirect('/cadastrar-admin');
         }
     }
 }
