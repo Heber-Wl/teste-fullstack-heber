@@ -4,6 +4,22 @@ Router::connect('/', array(
 	'controller' => 'login',
 	'action' => 'login'
 ));
+Router::connect('/login-admin', [
+    'controller' => 'login',
+    'action' => 'loginAdmin'
+]);
+Router::connect('/logout', [
+	'controller' => 'login', 
+	'action' => 'logout'
+]);
+Router::connect('/cadastrar-admin', array(
+	'controller' => 'usuario',
+	'action' => 'cadastrarAdmin'
+));
+Router::connect('/cadastro-admin', array(
+	'controller' => 'usuario',
+	'action' => 'cadastroAdmin'
+));
 Router::connect('/cadastrar', array(
 	'controller' => 'usuario',
 	'action' => 'cadastrarUsuario'
