@@ -2,9 +2,10 @@
 
 Class AdminController extends AppController {
 
+    public $components = ['Paginator'];
+
     public function paginaInicial() {
         if (!$this->Session->check('Admin')) {
-
             $this->Session->setFlash('Você precisa fazer login!.', 'error');
             return $this->redirect('/');
         }
@@ -14,15 +15,21 @@ Class AdminController extends AppController {
         $this->loadModel('Prestador');
         $this->loadModel('Servico');
 
-        $prestadores = $this->Prestador->find('all', [
-            'recursive' => 2,
-            'order' => ['Prestador.nome' => 'ASC']
-        ]);
+        $this->Paginator->settings = [
+            'Prestador' => [
+                'limit' => 10,
+                'order' => ['Prestador.nome' => 'ASC'],
+                'recursive' => 2
+            ]
+        ];
+
+        $prestadores = $this->Paginator->paginate('Prestador');
+
         foreach ($prestadores as &$p) {
             $p['Prestador']['iniciais'] =
                 $this->Prestador->resgatarPrimeirosDuasLetras($p['Prestador']['nome']);
         }
-        
+
         $servicos = $this->Servico->find('all', [
             'order' => ['Servico.descricao' => 'ASC']
         ]);

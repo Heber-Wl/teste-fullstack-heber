@@ -140,3 +140,15 @@ tbody tr td {
 .link svg {
     height: 25px;
 }
+.paginacao {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 5px;
+}
