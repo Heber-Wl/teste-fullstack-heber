@@ -132,4 +132,93 @@ Class AdminController extends AppController {
 
         return $linhas;
     }
+    public function editarPrestador($id = null) {
+
+        $this->layout = 'mensagens';
+        $this->loadModel('Prestador');
+        $this->loadModel('Servico');
+        $this->loadModel('PrestadorServico');
+
+        $prestador = $this->Prestador->findById($id);
+
+        $servicos = $this->Servico->find('list', [
+            'fields' => ['Servico.id', 'Servico.descricao'],
+            'order' => ['Servico.descricao' => 'ASC']
+        ]);
+
+        $servicosVinculados = $this->PrestadorServico->find('all', [
+            'conditions' => ['prestador_id' => $id]
+        ]);
+
+        $servicosMarcados = [];
+        $valoresMarcados = [];
+
+        foreach ($servicosVinculados as $item) {
+            $servicosMarcados[] = $item['PrestadorServico']['servico_id'];
+            $valoresMarcados[$item['PrestadorServico']['servico_id']] = $item['PrestadorServico']['valor'];
+        }
+
+        $this->set(compact('prestador', 'servicos', 'servicosMarcados', 'valoresMarcados'));
+
+    }
+    public function atualizarPrestador(){
+        $this->autoRender = false;
+
+        $this->loadModel('Prestador');
+        $this->loadModel('PrestadorServico');
+
+        if (!$this->request->is('post')) {
+            return $this->redirect('/home');
+        }
+
+        $data = $this->request->data;
+        $id = $data['Prestador']['id'];
+
+        $prestadorUpdate = [
+            'Prestador' => [
+                'id'       => $id,
+                'nome'     => $data['Prestador']['nome'],
+                'email'    => $data['Prestador']['email'],
+                'telefone' => $data['Prestador']['telefone'],
+            ]
+        ];
+
+        if (!empty($data['Prestador']['foto']['name'])) {
+
+            $foto = $data['Prestador']['foto'];
+            $ext = pathinfo($foto['name'], PATHINFO_EXTENSION);
+            $novoNome = 'prestador_' . $id . '.' . $ext;
+
+            move_uploaded_file(
+                $foto['tmp_name'],
+                WWW_ROOT . 'img/prestadores/' . $novoNome
+            );
+
+            $prestadorUpdate['Prestador']['foto'] = $novoNome;
+        }
+
+        $this->Prestador->save($prestadorUpdate);
+
+        $this->PrestadorServico->deleteAll([
+            'prestador_id' => $id
+        ]);
+
+        if (!empty($data['PrestadorServico']['servico'])) {
+
+            foreach ($data['PrestadorServico']['servico'] as $servico) {
+
+                if (!isset($servico['id'])) continue;
+
+                $this->PrestadorServico->create();
+
+                $this->PrestadorServico->save([
+                    'prestador_id' => $id,
+                    'servico_id'   => $servico['id'],
+                    'valor'        => $servico['valor'] ?? 0
+                ]);
+            }
+        }
+        $this->Session->setFlash('Atualizado !', 'success');
+        return $this->redirect('/home');
+    }
 }
