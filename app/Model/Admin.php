@@ -5,24 +5,22 @@ class Admin extends AppModel {
 
     public $validate = [
         'nome' => [
-            'notEmpty' => [
-                'rule' => 'notEmpty',
-                'message' => 'O nome é obrigatório.'
-            ]
+            'rule' => 'notBlank',
+            'message' => 'O nome é obrigatório.'
         ],
         'email' => [
             'email' => [
                 'rule' => 'email',
                 'message' => 'Informe um email válido.'
             ],
-            'notEmpty' => [
-                'rule' => 'notEmpty',
+            'notBlank' => [
+                'rule' => 'notBlank',
                 'message' => 'O email é obrigatório.'
             ]
         ],
-        'password' => [
-            'notEmpty' => [
-                'rule' => 'notEmpty',
+        'senha' => [
+            'notBlank' => [
+                'rule' => 'notBlank',
                 'message' => 'A senha é obrigatória.'
             ]
         ],
