@@ -3,6 +3,12 @@
 Class AdminController extends AppController {
 
     public function paginaInicial() {
+        if (!$this->Session->check('Admin')) {
+
+            $this->Session->setFlash('Você precisa fazer login!.', 'error');
+            return $this->redirect('/');
+        }
+
         $this->layout = 'mensagens';
 
         $this->loadModel('Prestador');
@@ -133,6 +139,11 @@ Class AdminController extends AppController {
         return $linhas;
     }
     public function editarPrestador($id = null) {
+        if (!$this->Session->check('Admin')) {
+
+            $this->Session->setFlash('Você precisa fazer login!.', 'error');
+            return $this->redirect('/');
+        }
 
         $this->layout = 'mensagens';
         $this->loadModel('Prestador');
