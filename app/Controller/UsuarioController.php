@@ -5,7 +5,7 @@ Class UsuarioController extends AppController {
     public $uses = ['Prestador', 'Servico'];
 
     public function cadastrarUsuario() {
-        $this->layout = false;
+        $this->layout = 'mensagens';
 
         $servicos = $this->Servico->find('list', [
             'fields' => ['Servico.id', 'Servico.descricao'],
@@ -16,12 +16,12 @@ Class UsuarioController extends AppController {
     }
 
     public function cadastroUsuario() {
-        $this->layout = false;
+        $this->layout = 'mensagens';
 
         if ($this->request->is('post')) {
 
             if ($this->request->data['Prestador']['password'] !== $this->request->data['Prestador']['confirm_password']) {
-                $this->Flash->error('As senhas não coincidem.');
+                $this->Session->setFlash('As senhas não coincidem.', 'error');
                 return $this->redirect($this->referer());
             }
 
@@ -32,7 +32,7 @@ Class UsuarioController extends AppController {
                 $arquivo = $this->request->data['Prestador']['foto'];
 
                 if ($arquivo['error'] !== UPLOAD_ERR_OK) {
-                    $this->Flash->error('Erro no upload da foto.');
+                    $this->Session->setFlash('Erro no upload da foto.', 'error');
                     return $this->redirect($this->referer());
                 }
 
@@ -40,12 +40,12 @@ Class UsuarioController extends AppController {
                 $allowed = ['image/jpeg', 'image/png', 'image/webp'];
 
                 if ($arquivo['size'] > $maxSize) {
-                    $this->Flash->error('Imagem muito grande. Máx 2MB.');
+                    $this->Session->setFlash('Imagem muito grande. Máx 2MB.', 'error');
                     return $this->redirect($this->referer());
                 }
 
                 if (!in_array($arquivo['type'], $allowed)) {
-                    $this->Flash->error('Tipo de arquivo não permitido. Apenas JPG, PNG, WEBP.');
+                    $this->Session->setFlash('Tipo de arquivo não permitido. Apenas JPG, PNG, WEBP.', 'error');
                     return $this->redirect($this->referer());
                 }
 
@@ -60,7 +60,7 @@ Class UsuarioController extends AppController {
                 $destino = $uploadDir . $nomeArquivo;
 
                 if (!move_uploaded_file($arquivo['tmp_name'], $destino)) {
-                    $this->Flash->error('Não foi possível salvar a imagem.');
+                    $this->Session->setFlash('Não foi possível salvar a imagem.', 'error');
                     return $this->redirect($this->referer());
                 }
 
@@ -97,11 +97,11 @@ Class UsuarioController extends AppController {
                     }
                 }
 
-                $this->Flash->success('Conta criada com sucesso!');
+                $this->Session->setFlash('Conta criada com sucesso!', 'success');
                 return $this->redirect('/home');
             }
 
-            $this->Flash->error('Erro ao cadastrar. Verifique os dados');
+            $this->Session->setFlash('Erro ao cadastrar. Verifique os dados', 'error');
             return $this->redirect($this->referer());
         }
     }
