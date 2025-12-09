@@ -1,0 +1,133 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+.card-login {
+    display: grid;
+    gap: 2rem;
+    height: auto;
+    width: 60%;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 32px 32px;
+    border: 1px solid #e1e5e9;
+    margin: 40px;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.titulo {
+    font-size: 30px;
+    color: #161616;
+    margin-bottom: 20px;
+}
+.sub-titulo {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 500;
+}
+.sub-sub-titulo {
+    font-size: 12px;
+    color: #4b5563;
+}
+.form {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 48% 48%;
+    gap: 1.5rem;
+}
+.inpts {
+    display: flex;
+    flex-direction: column;
+}
+.label {
+    font-size: 14px;
+    color: #4b5563;
+}
+.inpts.servicos {
+    width: 100%;
+    margin-top: 2rem;
+}
+.input {
+    height: 46px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 0.5rem;
+    border: 1px solid #4b5563;
+}
+.foto {
+    display: flex;
+    align-items: center;
+    margin: 20px 5px 0px 5px;
+}
+.icone.user {
+    height: 40px;
+}
+.input.file {
+    border: none;
+    height: auto;
+    width: auto;
+}
+.lista-servicos {
+    border: 1px solid #4b5563;
+    width: 98%;
+    max-height: 250px;
+    overflow-y: scroll;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.lista-de-servicos {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    border: 1px solid #ddd;
+    width: 98%;
+    max-height: 250px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+.input-servico-valor {
+    display: grid;
+    height: 22px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #4b5563;
+}
+.botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 2rem;
+}
+.botao-entrar {
+    display: flex;
+    justify-self: center;
+    height: 46px;
+    width: 30%;
+    border-radius: 0.5rem;
+    background-color: #EF4444;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+}
+.nao-login {
+    text-align: center;
+    color: #4b5563;
+}
+.link-nao-login {
+    color: #EF4444;
+    text-decoration: none;
+}
